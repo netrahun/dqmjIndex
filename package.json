@@ -1,11 +1,11 @@
 {
-  "name": "dqmjindex",
+  "name": "dqmjIndex",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite --open",
-    "build": "vite build --base=/dqmjindex/",
+    "build": "vite build --base=/dqmjIndex/",
     "lint": "eslint .",
     "preview": "vite preview --open",
     "deploy": "gh-pages -d dist"
