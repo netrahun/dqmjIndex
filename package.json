@@ -1,17 +1,16 @@
 {
   "name": "dqmjIndex",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite --open",
-    "build": "vite build --base=/dqmjIndex/",
+    "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview --open",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "gh-pages": "^6.3.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router": "^7.6.3"
