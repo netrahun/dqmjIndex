@@ -288,7 +288,13 @@ function App() {
   return (
     <>
       <main>
-        <video id="bgVid" src="src\assets\dqmj.webm" autoPlay loop></video>
+        <video
+          id="bgVid"
+          src="/assets/dqmj.webm"
+          type="video/webm"
+          autoPlay
+          loop
+        ></video>
 
         <div id="topBar" aria-label="header">
           <HeaderCom />
