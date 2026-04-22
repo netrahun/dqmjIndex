@@ -11,6 +11,7 @@
     --headerHeight: 48px;
 
     --Germania: "Germania One", system-ui;
+    --Roboto: "Roboto", san-serif;
 
     scrollbar-width: none;
 }
@@ -20,7 +21,8 @@ body {
     margin: 0;
 
     background-image: url("/src/assets/dqmjBackup.png");
-    background-size: contain;
+    background-position: center;
+    background-size: cover;
 }
 
 main {
@@ -86,7 +88,7 @@ footer {
     background-color: white;
     background-clip: border-box;
 
-    max-height: calc(51px * 3);
+    max-height: calc(48px * 5);
     overflow-y: scroll;
 
     border-radius: 2rem;
@@ -95,6 +97,8 @@ footer {
 
     opacity: 1;
     transition: opacity 0.5s;
+
+    filter: drop-shadow(0 0 1rem 0.5rem black);
 
     @starting-style {
         opacity: 0;
@@ -110,6 +114,8 @@ footer {
         border: none;
         background-color: white;
         width: 100%;
+        height: fit-content;
+        padding-block: 4px;
 
         justify-content: center;
         align-items: center;
@@ -122,21 +128,20 @@ footer {
 }
 
 #bookMenu {
-    --difference: 6px;
+    --difference: 4px;
     display: inline;
     height: calc(48px - var(--difference));
     aspect-ratio: 1/1;
     border: none;
     border-radius: 50%;
-    position: relative;
     background-color: var(--slimeBlue);
     background-image: url(./assets/bookModel.svg);
     background-size: calc(32px - var(--difference)), cover;
     background-repeat: no-repeat;
     background-position: center;
-    position: relative;
-    top: calc(var(--headerHeight) - calc(var(--difference) / 2));
-    left: calc(var(--difference) / 2);
+    position: absolute;
+    padding: 0;
+    left: 2px;
     z-index: 4;
 
     &:hover {
@@ -173,11 +178,6 @@ footer {
 
     &:focus {
         border: 2px solid var(--mustard);
-    }
-
-    &:focus-within {
-        border: 2px solid var(--slimeBlue);
-        background-color: var(--mustard);
     }
 
     & input {
@@ -461,7 +461,7 @@ footer {
     max-width: 512px;
     overflow-x: hidden;
     overflow-y: scroll;
-    /* padding-top: 64px; */
+    padding-top: 1rem;
     padding-bottom: 1rem;
     height: 100%;
 
@@ -490,6 +490,10 @@ footer {
     }
 
     & figure {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
         background-image: linear-gradient(
             to bottom,
             var(--mustard),
@@ -499,23 +503,31 @@ footer {
         border: 2px solid var(--obsidian);
         border-radius: 1rem;
 
+        aspect-ratio: 9/16;
+
+        & span {
+            font-size: 1rem;
+        }
+
         & img {
             width: 90%;
             aspect-ratio: 1/1;
-            filter: drop-shadow(0 0 0.25rem black);
+            filter: drop-shadow(0 0 0.1rem var(--obsidian));
+            margin-inline: auto;
         }
 
         & figcaption {
-            position: relative;
+            position: static;
+            bottom: 0;
             background-color: var(--obsidian);
             min-height: 32px;
 
             color: white;
             text-align: center;
-            font-size: 0.67rem;
+            font-size: 0.75rem;
             word-wrap: break-word;
             border-radius: 0 0 1rem 1rem;
-            padding: 2px;
+            padding: 0.5rem;
             margin: 0;
         }
     }
@@ -571,6 +583,9 @@ footer {
         display: block;
         text-align: center;
     }
+    & p {
+        font-family: var(--Roboto);
+    }
 }
 
 .detailsWrapper {
@@ -600,17 +615,6 @@ footer {
     height: 100%;
     border: 0 solid transparent;
     border-radius: 2rem;
-
-    animation: 2s infinite bgSpin;
-
-    @keyframes bgSpin {
-        from {
-            rotate: 0deg;
-        }
-        to {
-            rotate: 360deg;
-        }
-    }
 }
 
 .detailGrid {
@@ -625,7 +629,22 @@ footer {
     border-radius: 1.5rem;
     height: calc(100% - var(--borderDifference));
 
-    background: linear-gradient(var(--obsidian), var(--slimeBlue));
+    background:
+        url("assets/slime_2.svg") 10%,
+        linear-gradient(var(--obsidian), var(--slimeBlue) 50%);
+
+    background-repeat: no-repeat;
+
+    animation: 2s infinite bgSpin;
+
+    @keyframes bgSpin {
+        from {
+            rotate: 0deg;
+        }
+        to {
+            rotate: 360deg;
+        }
+    }
 
     & div {
         /* display: flex;
@@ -638,10 +657,14 @@ footer {
 
         & div p {
             text-align: center;
-            font-size: 1rem;
+            font-size: 0.75rem;
             color: white;
             margin: 0;
             filter: drop-shadow(0 0 0.2rem black) drop-shadow(0 0 0.1rem black);
+
+            @media screen and (min-width: 540px) {
+                font-size: 1rem;
+            }
         }
     }
 }

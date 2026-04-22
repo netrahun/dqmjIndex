@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import slime from "./assets/slime.svg";
 import "./App.css";
 import monsterJson from "./json/monsters.json";
+import { useEffect } from "react";
 
 /*
 
@@ -47,6 +48,7 @@ function SearchBar({
         setQuery("");
       }}
     >
+      <span>{mon.id}</span>
       <img
         className="resultButtonImg"
         src={mon.spriteUrl}
@@ -87,7 +89,8 @@ function SearchBar({
         id="bookMenu"
         onClick={() => {
           showCatalog(true);
-          modal.showModal();
+          modal.current.showModal();
+          console.log("modal opened");
         }}
       ></button>
 
@@ -121,10 +124,10 @@ function MonsterDetail({ monsterList, currentMonster, setCurrentMonster }) {
   function handleNavigation(direction) {
     if (direction == "l") {
       if (currentMonster <= 0) {
-        setCurrentMonster(monsterList.length - 1);
+        setCurrentMonster(monsterList.current.length - 1);
       } else setCurrentMonster((i) => i - 1);
     } else if (direction == "r") {
-      if (currentMonster >= monsterList.length - 1) {
+      if (currentMonster >= monsterList.current.length - 1) {
         setCurrentMonster(0);
       } else setCurrentMonster((i) => i + 1);
     }
@@ -233,8 +236,9 @@ function MonsterDetail({ monsterList, currentMonster, setCurrentMonster }) {
 
 function ShowFullList({ modal, toggleModal, gotoMonster }) {
   function closeModal() {
-    modal.close();
+    modal.current.close();
     toggleModal(false);
+    console.log("modal closed");
   }
 
   let fullList = monsterJson.monsters.map((mon, index) => (
@@ -280,17 +284,22 @@ function ShowFullList({ modal, toggleModal, gotoMonster }) {
 */
 
 function App() {
+  useEffect(() => {
+    mList.current = document.getElementsByClassName("monsterDetailContainer");
+    catalogModal.current = document.getElementById("listWrapper");
+  }, []);
+
   let [currentMonster, setCurrentMonster] = useState(0);
   let [isFullListActive, setFullList] = useState(false);
-  let mList = document.getElementsByClassName("monsterDetailContainer");
-  let catalogModal = document.getElementById("listWrapper");
+  let mList = useRef(document.getElementsByClassName("monsterDetailContainer"));
+  let catalogModal = useRef(document.getElementById("listWrapper"));
 
   return (
     <>
       <main>
         <video
           id="bgVid"
-          src="/assets/dqmj.webm"
+          src="src/assets/dqmj.webm"
           type="video/webm"
           autoPlay
           loop
