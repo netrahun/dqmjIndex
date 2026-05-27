@@ -13,7 +13,7 @@ export default function About({ showAbout, showAboutFunction }) {
             document.getElementById("aboutWrapper").classList.add("close");
           }}
         >
-          <img src="./assets/info.svg"/>
+          <img src="./info.svg"/>
         </button>
         <section id="aboutSection">
           <h1>Welcome to the Dragon Quest Index</h1>
@@ -36,7 +36,7 @@ export default function About({ showAbout, showAboutFunction }) {
           <br></br>
           <h2>Concept</h2>
           <p>Below is the original wireframe / mock up for the website</p>
-          <img src="./assets/mockup.png" className="aboutAsset" />
+          <img src="./mockup.png" className="aboutAsset" />
           <p>Even though its not neat, it got the job done.</p>
 
           <h2>Gathering the Info</h2>
@@ -76,7 +76,7 @@ export default function About({ showAbout, showAboutFunction }) {
           <br />
 
           <img
-            src="./assets/mockup_2.png"
+            src="./mockup_2.png"
             className="aboutAsset"
           />
           <p>
@@ -97,7 +97,7 @@ export default function About({ showAbout, showAboutFunction }) {
           </p>
           <section id="explain-pokedex" className="flexcol">
             <img
-              src="./assets/pokedexMobile1.png"
+              src="./pokedexMobile1.png"
               className="pokeMobileView"
             ></img>
             <p>
@@ -106,7 +106,7 @@ export default function About({ showAbout, showAboutFunction }) {
               the monster's name and ID.
             </p>
             <img
-              src="./assets/pokedexMobile2.png"
+              src="./pokedexMobile2.png"
               className="pokeMobileView"
             ></img>
             <p>
@@ -116,7 +116,7 @@ export default function About({ showAbout, showAboutFunction }) {
               gender.{" "}
             </p>
             <img
-              src="./assets/pokedexMobile3.png"
+              src="./pokedexMobile3.png"
               className="pokeMobileView"
             ></img>
             <p>
@@ -125,7 +125,7 @@ export default function About({ showAbout, showAboutFunction }) {
               Pokemon.{" "}
             </p>
             <img
-              src="./assets/pokedexMobile4.png"
+              src="./pokedexMobile4.png"
               className="pokeMobileView"
             ></img>
             <p>
@@ -134,7 +134,7 @@ export default function About({ showAbout, showAboutFunction }) {
               weaknesses.
             </p>
             <img
-              src="./assets/pokedexMobile5.png"
+              src="./pokedexMobile5.png"
               className="pokeMobileView"
             ></img>
             <p>
@@ -143,7 +143,7 @@ export default function About({ showAbout, showAboutFunction }) {
               the path, preview illustrations, name and id, and type.
             </p>
             <img
-              src="./assets/pokedex_example.png"
+              src="./pokedex_example.png"
               id="pokedex-scr"
             />
           </section>
