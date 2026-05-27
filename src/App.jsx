@@ -308,7 +308,7 @@ function App() {
       <main>
         <video
           id="bgVid"
-          src="src/assets/dqmj.webm"
+          src="./src/assets/dqmj.webm"
           type="video/webm"
           autoPlay
           loop
