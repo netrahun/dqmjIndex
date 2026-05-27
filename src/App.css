@@ -15,13 +15,20 @@
 
     scrollbar-width: none;
     overflow-x: hidden;
+
+    transition: opacity 2s ease-in-out;
+    opacity: 1;
+
+    @starting-style{
+        opacity: 0;
+    }
 }
 
 body {
     display: block;
     margin: 0;
 
-    background-image: url("/assets/dqmjBackup.png");
+    background-image: url("/dqmjBackup.png");
     background-position: center;
     background-size: cover;
 }
@@ -165,6 +172,9 @@ a, button{
         width: 100%;
         font-family: inherit;
         align-self: center;
+
+        font-family: var(--Roboto);
+
     }
     & ul{
         list-style: decimal;
@@ -183,9 +193,19 @@ a, button{
         flex-direction: column;
     }
 
-    & .flexrow{
+    & .flex{
         display: flex;
         flex-direction: column;
+        gap: 32px;
+
+        @media screen and (min-width: 540px){
+            flex-direction: row;
+        }
+    }
+
+    & #slimeExplain{
+        width: 100%;
+        max-width: 480px;
     }
 
     #explain-pokedex{
@@ -202,7 +222,6 @@ a, button{
             background-color: var(--obsidian);
             padding: 16px;
 
-            font-family: var(--Roboto);;
         }
 
         & p:nth-of-type(1){
@@ -299,8 +318,16 @@ a, button{
     z-index: -10;
     height: 1080px;
 
+    opacity: 1;
+
+
     @media screen and (min-height: 1081px) {
         height: 100%;
+    }
+
+    @starting-style{
+        transition: opacity 1s ease-in-out;
+        opacity: 0;
     }
 }
 
@@ -364,7 +391,7 @@ a, button{
     border: none;
     border-radius: 50%;
     background-color: var(--slimeBlue);
-    background-image: url("/assets/bookModel.svg");
+    background-image: url("/bookModel.svg");
     background-size: calc(32px - var(--difference)), cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -497,12 +524,12 @@ a, button{
         }
 
         & #leftArrow {
-            background: url("/assets/leftArrow.svg");
+            background: url("/leftArrow.svg");
             background-repeat: no-repeat;
             background-position: center;
         }
         & #rightArrow {
-            background: url("/assets/rightArrow.svg");
+            background: url("/rightArrow.svg");
             background-repeat: no-repeat;
             background-position: center;
         }
@@ -653,7 +680,7 @@ a, button{
                 border: 2px solid black;
                 border-radius: 50%;
                 padding: 0;
-                background-image: url("/assets/xButton.svg");
+                background-image: url("/xButton.svg");
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: calc(var(--headerHeight) * 0.3);
@@ -868,7 +895,7 @@ a, button{
     height: calc(100% - var(--borderDifference));
 
     background:
-        url("/assets/slime_2.svg") 10%,
+        url("/slime_2.svg") 10%,
         linear-gradient(var(--obsidian), var(--slimeBlue) 50%);
 
     background-repeat: no-repeat;

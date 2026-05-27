@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import slime from "/assets/slime.svg";
+import slime from "/slime.svg";
 import "./App.css";
 import monsterJson from "./json/monsters.json";
 import { version } from "../package.json"
@@ -308,7 +308,7 @@ function App() {
       <main>
         <video
           id="bgVid"
-          src="assets/dqmj.webm"
+          src="./dqmj.webm"
           type="video/webm"
           autoPlay
           loop
