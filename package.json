@@ -1,10 +1,10 @@
 {
   "name": "dqmjindex",
   "private": true,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --open",
+    "dev": "vite --open --host",
     "build": "vite build --base=/dqmjIndex/",
     "lint": "eslint .",
     "preview": "vite preview --open",

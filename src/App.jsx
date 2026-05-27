@@ -2,17 +2,22 @@ import { useRef, useState } from "react";
 import slime from "./assets/slime.svg";
 import "./App.css";
 import monsterJson from "./json/monsters.json";
+import { version } from "../package.json"
 import { useEffect } from "react";
+import About from "./about";
 
 /*
 
   COMPONENTS
 
 */
-function HeaderCom() {
+
+
+function HeaderCom({ showAboutFunction, showAboutValue}) {
+
   return (
     <header>
-      <img id="titleImg" src={slime} alt="slime icon" />
+      <button onClick={() => {showAboutFunction(!showAboutValue)}}><img id="titleImg" src={slime} alt="slime icon" /></button>
       <span>DRAGON QUEST INDEX</span>
     </header>
   );
@@ -294,8 +299,12 @@ function App() {
   let mList = useRef(document.getElementsByClassName("monsterDetailContainer"));
   let catalogModal = useRef(document.getElementById("listWrapper"));
 
+  let [showAbout, setShowAbout] = useState(false);
+
   return (
     <>
+      <About showAbout={showAbout} showAboutFunction={setShowAbout}/>
+
       <main>
         <video
           id="bgVid"
@@ -306,7 +315,7 @@ function App() {
         ></video>
 
         <div id="topBar" aria-label="header">
-          <HeaderCom />
+          <HeaderCom showAboutFunction={setShowAbout} showAboutValue={showAbout}/>
 
           <SearchBar
             currentMonster={currentMonster}
@@ -331,7 +340,8 @@ function App() {
       </main>
 
       <footer>
-        <p>This website was made by Netra Hun</p>
+        <p>Made by Netra Hun</p>
+        <a href="https://github.com/netrahun/dqmjIndex" target="_blank">v{version.slice(0,3)}</a>
       </footer>
     </>
   );
