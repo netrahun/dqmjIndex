@@ -13,7 +13,11 @@ export default function About({ showAbout, showAboutFunction }) {
             document.getElementById("aboutWrapper").classList.add("close");
           }}
         >
+<<<<<<< HEAD
           <img src="./info.svg" />
+=======
+          <img src="./info.svg"/>
+>>>>>>> 2c4e2a075bfd1e60caa2cba2099bd890e890f5a0
         </button>
         <section id="aboutSection">
           <h1>Welcome to the Dragon Quest Index</h1>
@@ -70,7 +74,15 @@ export default function About({ showAbout, showAboutFunction }) {
             <li>the UI had to make sense and could be easily understood</li>
           </ul>
           <br />
+<<<<<<< HEAD
           <img src="./mockup_2.png" className="aboutAsset" />
+=======
+
+          <img
+            src="./mockup_2.png"
+            className="aboutAsset"
+          />
+>>>>>>> 2c4e2a075bfd1e60caa2cba2099bd890e890f5a0
           <p>
             I had a hard time figuring out where to place the catalog button at
             first, but I eventually settled on an area next to the search bar.
@@ -86,38 +98,80 @@ export default function About({ showAbout, showAboutFunction }) {
             of competitor research on the Pokemon Index website.
           </p>
           <section id="explain-pokedex" className="flexcol">
+<<<<<<< HEAD
             <img src="./pokedexMobile1.png" className="pokeMobileView"></img>
+=======
+            <img
+              src="./pokedexMobile1.png"
+              className="pokeMobileView"
+            ></img>
+>>>>>>> 2c4e2a075bfd1e60caa2cba2099bd890e890f5a0
             <p>
               At the top, they have navigational buttons to explore other
               pokemon at the top, left and right buttons. Below that, they have
               the monster's name and ID.
             </p>
+<<<<<<< HEAD
             <img src="./pokedexMobile2.png" className="pokeMobileView"></img>
+=======
+            <img
+              src="./pokedexMobile2.png"
+              className="pokeMobileView"
+            ></img>
+>>>>>>> 2c4e2a075bfd1e60caa2cba2099bd890e890f5a0
             <p>
               Below that, there is a 2 colum grid to house: a Pokemon
               illustration, description, associated game version (red or blue),
               biometric data: height, weight, category, abilities, and
               gender.{" "}
             </p>
+<<<<<<< HEAD
             <img src="./pokedexMobile3.png" className="pokeMobileView"></img>
+=======
+            <img
+              src="./pokedexMobile3.png"
+              className="pokeMobileView"
+            ></img>
+>>>>>>> 2c4e2a075bfd1e60caa2cba2099bd890e890f5a0
             <p>
               Below the illustration there is a stat table with attributes
               indicating the Pokemon's overall effectiveness compared to other
               Pokemon.{" "}
             </p>
+<<<<<<< HEAD
             <img src="./pokedexMobile4.png" className="pokeMobileView"></img>
+=======
+            <img
+              src="./pokedexMobile4.png"
+              className="pokeMobileView"
+            ></img>
+>>>>>>> 2c4e2a075bfd1e60caa2cba2099bd890e890f5a0
             <p>
               Right of the table, there is a type and weakness list showing what
               elemental family Pokemon belong to, as well as its associated
               weaknesses.
             </p>
+<<<<<<< HEAD
             <img src="./pokedexMobile5.png" className="pokeMobileView"></img>
+=======
+            <img
+              src="./pokedexMobile5.png"
+              className="pokeMobileView"
+            ></img>
+>>>>>>> 2c4e2a075bfd1e60caa2cba2099bd890e890f5a0
             <p>
               Below the 2 column grid, a evolution table is present showing what
               this Charmander eventually evolves into. It has arrows denoting
               the path, preview illustrations, name and id, and type.
             </p>
+<<<<<<< HEAD
             <img src="./pokedex_example.png" id="pokedex-scr" />
+=======
+            <img
+              src="./pokedex_example.png"
+              id="pokedex-scr"
+            />
+>>>>>>> 2c4e2a075bfd1e60caa2cba2099bd890e890f5a0
           </section>
           <p>
             After evaluating a competitor, and determined a MVP layout, I started
