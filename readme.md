@@ -5,7 +5,7 @@ Welcome to a mini-wiki centered around the DQMJ monsters!
 
 ![](https://github.com/netrahun/dqmjIndex/blob/main/public/dqindex.gif)
 
-[ DQMJ Index ]]netrahun.github.io/dqmjIndex/
+[ DQMJ Index ]netrahun.github.io/dqmjIndex/
 
 # Search the monsters
 Know of a monster? use the search functionality to quickly find the one you're looking for.
